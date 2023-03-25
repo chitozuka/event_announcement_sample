@@ -5,18 +5,10 @@ class Event < ApplicationRecord
   validates :content, length: { maximum: 2000 }, presence: true
   validates :start_at, presence: true
   validates :end_at, presence: true
-  validate :start_at_should_be_after_current
   validate :start_at_should_be_before_end_at
 
   private
 
-  def start_at_should_be_after_current
-    return unless start_at && end_at
-
-    if start_at <= Time.current
-      errors.add(:start_at, "は現在時間よりも後に設定してください")
-    end
-  end
   def start_at_should_be_before_end_at
     return unless start_at && end_at
 
