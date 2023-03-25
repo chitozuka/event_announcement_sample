@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :event do
-    association :owner_id, factory: :user
+    association :owner, factory: :user
     name {"event1"}
     place {"Tokyo"}
     start_at {"2023/04/20 11:00"}
