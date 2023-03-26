@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :event do
     association :owner, factory: :user
-    name {"event1"}
-    place {"Tokyo"}
-    start_at {"2023/04/20 11:00"}
-    end_at {"2023/04/20 12:00"}
-    content {"event content"}
+    sequence(:name) { |n| "event#{n}" }
+    place { "Tokyo" }
+    sequence(:start_at) { |n| DateTime.now + n }
+    sequence(:end_at) { |n| DateTime.now + n + 1 }
+    sequence(:content) { |n| "event content#{n}" }
   end
 end
