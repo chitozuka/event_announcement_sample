@@ -16,9 +16,6 @@ RSpec.describe 'User', type: :system do
     end
 
     context 'ログイン済みの場合' do
-      let(:user) { FactoryBot.create(:user) }
-      let!(:session) { { user_id: user.id } }
-
       it 'ログアウトができること' do
         subject
         click_link 'ログアウト'
