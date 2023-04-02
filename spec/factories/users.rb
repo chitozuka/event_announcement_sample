@@ -5,4 +5,11 @@ FactoryBot.define do
     name {"chitozuka"}
     image_url {"https://chitozuka.com/image.gif"}
   end
+
+  factory :owner, class: User do
+    provider {"github"}
+    uid {"123456"}
+    name {"eventOwner"}
+    image_url {"https://eventOwner.com/image.gif"}
+  end
 end

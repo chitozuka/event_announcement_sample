@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Ticket, type: :model do
   describe 'validateion' do
-    let(:ticket) { FactoryBot.build(:ticket) }
+    let(:user) { FactoryBot.create(:user) }
+    let(:event) { FactoryBot.create(:event) }
+    let(:ticket) { FactoryBot.build(:ticket, event: event, user: user) }
 
     context 'when all attributes are present' do
       it 'is valid' do
