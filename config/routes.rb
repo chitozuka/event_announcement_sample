@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :retirements
   resources :events do
     resources :tickets
   end
